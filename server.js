@@ -7,7 +7,7 @@ const PlaylistModel = require('./data/schemas/playlist-schema.js');
 // Initialize Express
 var app = express();
 
-const port = 8080;
+const port = 3000;
 // Render static files
 app.use(express.static('public'));
 app.use('/css', express.static(__dirname + 'public/css'));
