@@ -10,6 +10,9 @@
 		<link rel="stylesheet" href="../../css/footer.css">
 		<link rel="stylesheet" href="css/dashboard.css">
         <link rel="stylesheet" href="css/pageHero.css">
+        <link rel="stylesheet" href="css/cards.css">
+        <link rel="stylesheet" href="css/schedulePage.css">
+        <link rel="stylesheet" href="css/overlays.css">
         <!-- Title -->
         <title>Cosmic Harmony - Scheduling</title>
         <!-- Logo Icon -->
@@ -17,12 +20,46 @@
      </head>
     <body>
         <header><%- include('../partials/navbar.ejs') %></header>
+        <section id="eventManageOverlays">
+            <span class="eventManage"></span>
+        </section>
         <main>
             <%- include('../partials/hero.ejs') %>
             <%- include('../partials/searchBar.ejs') %>
-            <div id="eventSchedule">
-                
-            </div>
+            <span style="display: flex; text-transform: uppercase; font-size: 5vw; font-weight: 600; color: white;">Upcoming Events</span>
+            <hr style = "width: 90vw; margin-left: 5vw; height: 0.5vh; margin-top: -2.9vh">
+            <span id="upcomingEventsContainer">
+                <% if(upcomingEvents.length > 0) {%>
+                    <% upcomingEvents.forEach(function(event) { %>
+                        <span class="upcomingEventCard" id = "<%= event.eventId %>" style="background-image: url('<%= event.cover %>'); background-size: cover; border-radius: 10%;">
+                            <span class="eventTitle"><%= event.eventName %></span>
+                            <span class="eventId"><%= event.eventId %></span>
+                            <span class="eventDescription"><%= event.description %></span>
+                            <span class="scheduledDate"><%= event.eventDate %></span>
+                            <span class="timing">
+                                <span class="startTime"><%= event.eventTime %></span> 
+                                |
+                                <span class="endTime">__ : __</span>
+                            </span>
+                            <span class="buttonGroup">
+                                <button class="info"><i class="fa-solid fa-info"></i> info</button>
+                                <button class="manage"><i class="fa-solid fa-pen-to-square"></i> manage</button>
+                                <button class="cancel"><i class="fa-solid fa-ban"></i> cancel</button>
+                            </span>
+                        </span>
+                    <% }); %>
+                <% } %>
+            </span>
+            <span style="display: flex; text-transform: uppercase; font-size: 5vw; font-weight: 600; color: white;">Past Events</span>
+            <hr style = "width: 90vw; margin-left: 5vw; height: 0.5vh; margin-top: -2.9vh">
+            <span class="pastEvents">
+
+            </span>
+            <span style="display: flex; text-transform: uppercase; font-size: 5vw; font-weight: 600; color: white;">canceled Events</span>
+            <hr style = "width: 90vw; margin-left: 5vw; height: 0.5vh; margin-top: -2.9vh">
+            <span class="canceledEvents">
+
+            </span>
         </main>
         <footer><%- include('../partials/footer.ejs') %></footer>
     </body>

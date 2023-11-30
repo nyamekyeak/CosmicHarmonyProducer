@@ -199,15 +199,30 @@ app.get('/djpool', async function (req, res)
 
 });
 
-app.get('/schedule', function (req, res)
+app.get('/schedule', async function (req, res)
 {
-    res.render('pages/schedule',
+    console.log('Retrieving data from MongoDB');
+    try {
+      const eventsCollection = publicDataBase.collection('Programs');
+      const allEvents = await eventsCollection.find({}).toArray();
+      const upcomingEvents = await eventsCollection.find({eventStatus: "upcoming"}).toArray();
+      const cancelledEvents = await eventsCollection.find({eventStatus: "cancelled"}).toArray();
+      res.render('pages/schedule',
+      {
+          pageTitle: "Schedule", 
+          heroHeader: "Schedule", 
+          heroCaption: "View and manage upcoming programs and schedules",
+          heroImage: "assets/images/placeholderImages/placeholder3.jpg",
+          allEvents: allEvents,
+          upcomingEvents: upcomingEvents,
+          cancelledEvents: cancelledEvents
+      });
+    } 
+    catch (error) 
     {
-        pageTitle: "Schedule", 
-        heroHeader: "Schedule", 
-        heroCaption: "View and manage upcoming programs and schedules",
-        heroImage: "assets/images/placeholderImages/placeholder3.jpg"
-    });
+      console.error('Error retrieving data from MongoDB', error);
+      res.status(500).send('Error retrieving data');
+    }
 });
 
 app.get('/library', async function (req, res)

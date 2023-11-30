@@ -355,6 +355,72 @@ span[id = "songsByGenre"]
                     display: none;
                 }
 
-/* Cards for profiles on about page */
 /* Cards for events */
+span[id = "upcomingEventsContainer"] .upcomingEventCard
+{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 30vw;
+    height: 25vh;
+    background-color: rgba(205, 14, 219, 0.673);
+}
+
+    span[id = "upcomingEventsContainer"] .upcomingEventCard .eventTitle
+    {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.75vw;
+        text-align: center;
+        margin-top: 2vh;
+    }
+
+    span[id = "upcomingEventsContainer"] .upcomingEventCard .eventId
+    {
+        font-size: 0.55vw;
+        text-align: center;
+        margin-top: -0.5vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    span[id = "upcomingEventsContainer"] .upcomingEventCard .eventDescription
+    {
+        display: flex;
+        width: 95%;
+        margin-left: 2.5%;
+        height: 30%;
+        text-overflow: ellipsis;
+        justify-content: center;
+        text-align: justify;
+        text-align: center;
+    }
+
+    span[id = "upcomingEventsContainer"] .upcomingEventCard .scheduledDate
+    {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    span[id = "upcomingEventsContainer"] .upcomingEventCard .timing
+    {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        gap: 0.5vw;
+    }
+
+    span[id = "upcomingEventsContainer"] .upcomingEventCard .buttonGroup
+    {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 0.5vw;
+        margin-top: 1.75vh;
+    }
+
+/* Cards for profiles on about page */
 /* Cards for search results */

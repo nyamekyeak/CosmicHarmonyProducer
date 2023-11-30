@@ -325,6 +325,8 @@ async function confirmEvent(button)
         {
             console.log(data);
             alert("Event Created");
+            resetEventCreation(button.parentElement);
+            closeOverlay(button.parentElement);
             // dom operation into event views
             appendNewEventCard(eventCreated);
             // resetting globals
