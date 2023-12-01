@@ -26,7 +26,6 @@ See `PagesWalkThrough.mp4` for walkthrough highlighting system presentation and 
 #### Comparison and Justification (20 points):
 
 See `ComparisonJustification.mp4` for walkthrough highlighting comparison and justification of changes to the UX <hr>
-    `UsabilityComparisonJustification.mp4`
     This is the recording that was made for the comparison and justification.<br>
 
 
@@ -44,12 +43,15 @@ See `DatabaseWalkthrough.mp4` for walkthrough highlighting common database usage
 #### Data Integration Across Screens (5 points):
 
 [x] Demonstration of how data changes are reflected across various screens and user roles.
+<br>
+    This is displayed in `ProducerFullWalkthrough.mp4`.
 
 
 ### Demonstration (20 points) 
 See `ProducerFullWalkthrough.mp4` for walkthrough highlighting demonstration of the entire system for the producer profile.<br>
-- Proper Demonstration of Usability for Each Profile (30 points): 
-  - Comprehensive demonstration showing the usability of the system from the perspective of each user 
+
+#### Proper Demonstration of Usability for Each Profile (30 points): 
+  - [x] Comprehensive demonstration showing the usability of the system from the perspective of each user 
 profile (Producer, DJ, Listener, and Manager if applicable). 
   -  Functionality provided is applicable to the selected role and a radio station 
   - Clear and concise explanation of the functionality and features as they relate to each specific user 
